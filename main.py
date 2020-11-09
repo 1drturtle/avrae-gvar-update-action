@@ -21,7 +21,10 @@ def post_gvar(token: str, gvar: ToPublish):
         post_result = requests.post(url=request,
                                     json=data_post,
                                     headers=auth
-                                    ).json()
+                                    )
+        if post_result is None:
+            return print(f'No information returned from GVAR {gvar.gvar_id}')
+        post_result = post_result.json()
         print(f'Result for ID {gvar.gvar_id}: POST Request Succeeded? {post_result["success"]}')
         if not post_result['success']:
             print(f'Error in POST: {post_result}')
