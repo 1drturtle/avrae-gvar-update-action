@@ -11,7 +11,7 @@ def post_gvar(token: str, gvar: ToPublish):
     with open(gvar.abs_path, 'r') as f:
         code = f.read()
         data_post = {
-            "content": code
+            "value": code
         }
         # Make Requests
         auth = {'Authorization': token}
@@ -22,7 +22,6 @@ def post_gvar(token: str, gvar: ToPublish):
                                     json=data_post,
                                     headers=auth
                                     )
-        print(post_result)
         post_result = post_result.json()
         print(f'Result for ID {gvar.gvar_id}: POST Request Succeeded? {post_result["success"]}')
         if not post_result['success']:
