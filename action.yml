@@ -1,0 +1,20 @@
+name: 'Update Avrae GVARs'
+description: 'On every run, it will check for modified files and update your GVARs based off of gvar-ids.json.'
+branding:
+  color: 'blue'
+  icon: 'upload-cloud'
+
+inputs:
+  alias-ids-file:
+    description: 'Path to the file that contains the GVAR ids'
+    required: true
+    default: 'gvar-ids.json'
+  avrae-token:
+    description: 'Your Avrae API token'
+    required: true
+  modified-files:
+    description: "JSON list of modified files"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"

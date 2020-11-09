@@ -1,0 +1,19 @@
+name: Update GVARs
+on:
+  push:
+    branches:
+      - master
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - id: modifed
+      uses: jitterbit/get-changed-files@master
+      with:
+        format: 'json'
+    - uses: 1drturtle/avrae-gvar-update-action@master
+      with:
+        avrae-token: '${{ secrets.AVRAETOKEN }}'
+        alias_id_file_name: 'gvar-ids.json'
+        modified-files: '${{ steps.modifed.outputs.added_modified }}'
