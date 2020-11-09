@@ -15,7 +15,7 @@ def post_gvar(token: str, gvar: ToPublish):
         }
         # Make Requests
         auth = {'Authorization': token}
-        request = f'https://api.avrae.io/workshop/gvars/{gvar.gvar_id}'
+        request = f'https://api.avrae.io/customizations/gvars/{gvar.gvar_id}'
         print('POST Request Sent to ' + request)
         # POST New Alias Code
         post_result = requests.post(url=request,
