@@ -15,5 +15,5 @@ jobs:
     - uses: 1drturtle/avrae-gvar-update-action@master
       with:
         avrae-token: '${{ secrets.AVRAETOKEN }}'
-        alias_id_file_name: 'gvar-ids.json'
+        gvar_id_file_name: 'gvar-ids.json'
         modified-files: '${{ steps.modifed.outputs.added_modified }}'
