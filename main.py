@@ -56,9 +56,5 @@ def main():
         post_gvar(avrae_token, gvar)
 
 
-def main():
-    pass
-
-
 if __name__ == '__main__':
     main()
