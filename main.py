@@ -23,6 +23,8 @@ def post_gvar(token: str, gvar: ToPublish):
                                     headers=auth
                                     ).json()
         print(f'Result for ID {gvar.gvar_id}: POST Request Succeeded? {post_result["success"]}')
+        if not post_result['success']:
+            print(f'Error in POST: {post_result}')
 
 
 def main():
