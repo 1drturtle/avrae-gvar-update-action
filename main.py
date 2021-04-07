@@ -26,7 +26,7 @@ def post_gvar(token: str, gvar: ToPublish):
 
 
 def main():
-    gvar_id_file_name = os.environ.get('INPUT_GVAR_ID_FILE_NAME')
+    gvar_id_file_name = os.environ.get('INPUT_GVAR-IDS-FILE')
     path_to_files = os.environ.get('GITHUB_WORKSPACE')
     avrae_token = os.getenv('INPUT_AVRAE-TOKEN', None)
     modified_files = json.loads(os.getenv('INPUT_MODIFIED-FILES', '[]'))
